@@ -21,6 +21,26 @@ double divide(double a, double b) {
     }     
     return a / b; 
 }
+	
+double power(double a, int b) {
+    double result = 1;
+
+    if (b < 0) {
+        b = -b;
+
+        for (int i = 0; i < b; i++) {
+            result *= a;
+        }
+
+        return 1 / result;
+    }
+
+    for (int i = 0; i < b; i++) {
+        result *= a;
+    }
+
+    return result;
+}
 
 int main() {
     double a = 10;
@@ -30,6 +50,7 @@ int main() {
     printf("Subtraction: %.2f\n", subtract(a, b));
     printf("Multiplication: %.2f\n", multiply(a, b));
     printf("Division: %.2f\n", divide(a, b));
+    printf("Power: %.2f\n", power(a, b));
 
     return 0;
 }
